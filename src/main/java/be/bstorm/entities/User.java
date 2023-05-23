@@ -8,6 +8,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 //@Access(value = AccessType.FIELD)
+@NamedQueries({
+        @NamedQuery(name = "getByBirthdate",
+                    query = "select u from User u where year(u.birthdate) < :year ")
+})
 @Entity
 @Table(name = "CUSTOMER",
        uniqueConstraints = {@UniqueConstraint( name = "UK_CUSTOMER__FIRST_NAME__LAST_NAME",
