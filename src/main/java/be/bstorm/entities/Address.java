@@ -8,5 +8,5 @@ import lombok.*;
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
 public class Address {
 
-    private String name;
+    private String address;
 }

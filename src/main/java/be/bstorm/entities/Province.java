@@ -17,6 +17,7 @@ public class Province implements Serializable {
     @Getter @Setter
     private String name;
 
+    @OrderBy("name")
     @OneToMany(mappedBy = "province",
                fetch = FetchType.EAGER)
     private List<Municipality> municipalities;

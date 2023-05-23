@@ -22,21 +22,29 @@ public class Main {
                 .address(new Address("Rue ceriser numero 18!!!"))
                 .build();
         MiniCRUD.add(user);
+        User user2 = User.builder()
+                .firstname("Popol")
+                .lastname("LeTendu")
+                .birthdate(LocalDate.of(1965,2,21))
+                .gender(Gender.Dauphin)
+                .address(new Address("Rue Vagin"))
+                .build();
+        MiniCRUD.add(user2);
         Optional<User> resultUser = MiniCRUD.getOne(1L);
         if(resultUser.isPresent())
             user = resultUser.get();
-//        MiniCRUD.getAll();
-//
-//        user.setGender(Gender.TractopelleTondeuse);
-//        MiniCRUD.update(user);
+        MiniCRUD.getAll();
+
+        user.setGender(Gender.TractopelleTondeuse);
+        MiniCRUD.update(user);
 //        MiniCRUD.delete(user);
 
 //        OneToOneDemo.add();
 //        OneToOneDemo.get();
-
+//
 //        OneToManyDemo.add();
 //        OneToManyDemo.get();
-
+//
 //        ManyToManyDemo.add();
     }
 }
